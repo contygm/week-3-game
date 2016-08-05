@@ -1,8 +1,13 @@
 @import url("reset.css");
 
 * { 
-	border: 2px solid black;
-	background-color: lightgrey;
+	border: 2px solid white;
+}
+
+body {
+	background-image: url(../images/galaxy2.jpg);
+	background-size: cover;
+	color: white;
 }
 
 #first{
@@ -18,10 +23,10 @@
 
 
 header {
-	border: 2px solid black;
+	border: 2px solid white;
 	text-align: center;
 	width: 100%;
-	height: 80px;
+	height: 100px;
 	margin-bottom: 25px;
 }
 
@@ -31,11 +36,14 @@ h1, h2 {
 }
 
 h1{
-	font-size: 26px;
+	font-size: 60px;
+	font-family: "SF Distant Galaxy Alternate";
 }
 
 h2 {
-	font-size: 22px;
+	font-size: 25px;
+	font-family: "SF Distant Galaxy";
+	font-style: italic;
 }
 
 p   {
@@ -47,7 +55,7 @@ p   {
  }
 
 #gallows {
-	border: 2px solid black;
+	border: 2px solid white;
 	width: 50%;
 	align-content: center;
 	height: 375px;
@@ -61,7 +69,7 @@ p   {
 	align-content: center;
 	height: 75%;
 	position: absolute;
-	border: 2px solid black;
+	border: 2px solid white;
 }
 
 img {
@@ -71,7 +79,7 @@ img {
 
 #winsDiv, #livesDiv {
 	display: inline-block;
-	border: 2px solid black;
+	border: 2px solid white;
 	width: 45%;
 	height: 20%;
 	text-align: center;
@@ -92,7 +100,7 @@ img {
 }
 
 #guessBox {
-	border: 2px solid black;
+	border: 2px solid white;
 	width: 40%;
 	height: 375px;
 	display: inline-block;
@@ -103,7 +111,7 @@ img {
 
 #directionsDiv, #lastGuessDiv, #pastGuessDiv {
 	width: 100%;
-	border: 2px solid black;
+	border: 2px solid white;
 	text-align: center;
 	height: 110px;
 	position: absolute;
@@ -123,14 +131,18 @@ img {
 
 
 footer {
+	background-image: url(../images/lightsaber3.png);
+	background-size: 100% 100%;
 	position: fixed;
+	color: black;
 	bottom: 0;
 	width: 100%;
 	clear: both;
 	text-align: center;
-	border: 2px solid black;
 	font-size: 45px;
 	font-weight: bold;
 	letter-spacing: 4px;
-	padding: 25px 0 25px 0;
+	padding: 35px 0 20px 0;
+	font-family: "SF Distant Galaxy";
+
 }

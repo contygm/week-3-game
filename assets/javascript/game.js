@@ -85,7 +85,7 @@ function checkWin(){
 		if (spaceHolder.includes("_") != true){
 			wins++;
 			document.getElementById("wins").innerHTML= "Wins: "+ wins;
-			resetWord();
+			setTimeout(resetWord(), 2000);
 			console.log(theWord);
 		}
 	}
