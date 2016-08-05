@@ -63,11 +63,7 @@ function resetWord (){
 function checkGuess(letter) {
 	var correct = 0;
 	for (var n = 0; n < theWord.length; n++) {
-		
 		if (letter == theWord[n].toLowerCase()){
-			console.log(spaceHolder[n]);
-			console.log(theWord[n]);
-			console.log(spaceHolder);
 			spaceHolder = spaceHolder.substr(0, n) + theWord[n] + spaceHolder.substr(n+1);
 			correct++;
 		}
@@ -140,6 +136,5 @@ document.onkeyup = function(event) {
 		document.getElementById("pastGuess").innerHTML= "You've already used these! <br>" + pastGuess;
 		updateLives();
 	}
-
 
 }
