@@ -101,7 +101,6 @@ function checkWin(){
 			
 		}
 	}
-	console.log(theWord);
 };
 
 function updateLives(){
@@ -113,7 +112,7 @@ function updateLives(){
 		audioLose.play();
 		resetWord();
 		setTimeout(printWord, 3000);
-		
+
 	} else {
 		document.getElementById("directions").innerHTML= "Nope! Try again!";
 		document.getElementById("lives").innerHTML= lives + " Errors";
@@ -124,7 +123,6 @@ function updateLives(){
 };
 
 window.onload = printWord;
-console.log(theWord);
 
 document.onkeyup = function(event) {
 	var guess = String.fromCharCode(event.keyCode).toUpperCase();
