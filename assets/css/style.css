@@ -27,7 +27,7 @@ header {
 	text-align: center;
 	width: 100%;
 	height: 100px;
-	margin-bottom: 25px;
+	margin-bottom: 45px;
 }
 
 h1, h2 {
@@ -70,6 +70,7 @@ p   {
 	display: block;
 	align-content: center;
 	height: 70%;
+	width: 100%;
 	position: absolute;
 	border: 3px solid #F74E40;
 	box-shadow: 0 0 3em #F61920;
@@ -77,9 +78,8 @@ p   {
 }
 
 img {
-	width: 100%;
+	width: 75%;
 	height: 100%;
-	border-radius: 25px;
 }
 
 #winsDiv, #livesDiv {
@@ -91,22 +91,17 @@ img {
 	position: absolute;
 	border: 3px solid #F74E40;
 	border-radius: 25px;
-
-
 }
 
 #winsDiv {
 	float: left;
 	bottom: 0;
-	
 }
 
 #livesDiv {
 	float: right;
 	right: 0;
 	bottom: 0;
-	
-	
 }
 
 #guessBox {
@@ -156,7 +151,7 @@ footer {
 	width: 100%;
 	clear: both;
 	text-align: center;
-	font-size: 45px;
+	font-size: 40px;
 	font-weight: bold;
 	letter-spacing: 4px;
 	padding: 35px 0 20px 0;

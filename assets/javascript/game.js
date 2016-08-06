@@ -1,5 +1,5 @@
 var wins = 0;
-var lives = 10;
+var lives = 7;
 var pastGuess = [];
 var spaceHolder = "" ;
 
@@ -32,7 +32,7 @@ var StarWars = [
 	"I sense great fear in you Skywalker","You were the chosen one",
 	"Now I am the master","I find your lack of faith disturbing",
 	"A powerful Sith you will become","I am C3PO Human Cyborg Relations",
-	"Hard to see the Dark Side is","Laugh it up Fuzz ball"
+	"Hard to see the Dark Side is","Laugh it up fuzz ball"
 ]
 
 function checkRepeat(letter) {
@@ -54,16 +54,15 @@ function printWord() {
 		}
 	}
 	document.getElementById("word").innerHTML= spaceHolder;
+	document.getElementById("hangman").src = "assets/images/Hangman-7.png";
 };
 
 function resetWord (){
 	theWord = StarWars[Math.floor(Math.random() * 50)];
 	pastGuess = [];
 	spaceHolder = "";
-	printWord();
-	lives = 10;
-	document.getElementById("lives").innerHTML= lives + " Lives";
-	document.getElementById("directions").innerHTML= "You won!";
+	lives = 7;
+	document.getElementById("lives").innerHTML= lives + " Errors";
 	document.getElementById("lastGuess").innerHTML= "Your last guess was: <br>";
 	document.getElementById("pastGuess").innerHTML= "You've already used these! <br>" + pastGuess;
 };
@@ -93,22 +92,36 @@ function checkWin(){
 		if (spaceHolder.includes("_") != true){
 			wins++;
 			document.getElementById("wins").innerHTML= "Wins: "+ wins;
-			setTimeout(resetWord(), 2000);
-			console.log(theWord);
+			document.getElementById("directions").innerHTML= "You won!";
+			document.getElementById("hangman").src = "assets/images/win.gif";
+			var audioWin = new Audio('assets/images/force.mp3');
+			audioWin.play();
+			resetWord();
+			setTimeout(printWord, 3000);
+			
 		}
 	}
+	console.log(theWord);
 };
 
 function updateLives(){
 	lives--;
 	if (lives < 1) {
 		document.getElementById("directions").innerHTML= "Oops! Looks like you lost! Hit a key for your next round!";
+		document.getElementById("hangman").src = "assets/images/lose.gif";
+		var audioLose = new Audio('assets/images/do_or_do_not.wav');
+		audioLose.play();
 		resetWord();
+		setTimeout(printWord, 3000);
+		
 	} else {
 		document.getElementById("directions").innerHTML= "Nope! Try again!";
-		document.getElementById("lives").innerHTML= lives + " Lives";
-	};
-}
+		document.getElementById("lives").innerHTML= lives + " Errors";
+		document.getElementById("hangman").src = "assets/images/Hangman-" + lives + ".png";
+		var audioWrong = new Audio('assets/images/lightsaber_01.wav');
+		audioWrong.play();
+	}
+};
 
 window.onload = printWord;
 console.log(theWord);
