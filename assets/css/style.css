@@ -23,7 +23,7 @@ body {
 
 
 header {
-	border: 2px solid white;
+	border-bottom: 2px solid #FCE804;
 	text-align: center;
 	width: 100%;
 	height: 100px;
@@ -33,16 +33,17 @@ header {
 h1, h2 {
 	padding-top: 5px;
 	padding-bottom: 5px;
+	color: #FCE804;
 }
 
 h1{
 	font-size: 60px;
-	font-family: "SF Distant Galaxy Alternate";
+	font-family: "SF Distant Galaxy AltOutline";
 }
 
 h2 {
 	font-size: 25px;
-	font-family: "SF Distant Galaxy";
+	font-family: "SF Distant Galaxy AltOutline";
 	font-style: italic;
 }
 
@@ -55,7 +56,6 @@ p   {
  }
 
 #gallows {
-	border: 2px solid white;
 	width: 50%;
 	align-content: center;
 	height: 375px;
@@ -67,9 +67,10 @@ p   {
 #status {
 	display: block;
 	align-content: center;
-	height: 75%;
+	height: 70%;
 	position: absolute;
-	border: 2px solid white;
+	border: 3px solid #FF8080;
+	box-shadow: 0 0 2em #F4171D;
 }
 
 img {
@@ -79,11 +80,13 @@ img {
 
 #winsDiv, #livesDiv {
 	display: inline-block;
-	border: 2px solid white;
+	border: 3px solid #FE8484;
+	box-shadow: 0 0 2em #F4171D;
 	width: 45%;
 	height: 20%;
 	text-align: center;
 	position: absolute;
+
 
 }
 
@@ -100,7 +103,6 @@ img {
 }
 
 #guessBox {
-	border: 2px solid white;
 	width: 40%;
 	height: 375px;
 	display: inline-block;
@@ -111,7 +113,6 @@ img {
 
 #directionsDiv, #lastGuessDiv, #pastGuessDiv {
 	width: 100%;
-	border: 2px solid white;
 	text-align: center;
 	height: 110px;
 	position: absolute;
@@ -119,14 +120,21 @@ img {
 
 #directionsDiv {
 	top: 0;
+	border: 3px solid #CEF7B3;
+	box-shadow: 0 0 2em #39FF14;
 } 
 
 #lastGuessDiv{
 	top: 35%;
+	border: 3px solid #E7A0F0;
+	box-shadow: 0 0 2em #D37AFF;
 }
 
 #pastGuessDiv {
 	bottom: 0;
+	border: 3px solid #AEEEEE;
+	box-shadow: 0 0 2em #05EEFA;
+
 }
 
 
