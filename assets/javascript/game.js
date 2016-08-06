@@ -24,7 +24,15 @@ var StarWars = [
 
 	"Emperor Palpatine","Purple Lightsaber",
 	"Jedi Master Yoda","Qui Gon Jinn",
-	"May the Force Be With You","The Jedi Order"
+	"May the Force Be With You","The Jedi Order",
+	"There is no try","Never tell me the odds",
+	"In a galaxy far far away","I am your Father",
+
+	"Fear is the path to the dark side","Be mindful of your thoughts",
+	"I sense great fear in you Skywalker","You were the chosen one",
+	"Now I am the master","I find your lack of faith disturbing",
+	"A powerful Sith you will become","I am C3PO Human Cyborg Relations",
+	"Hard to see the Dark Side is","Laugh it up Fuzz ball"
 ]
 
 function checkRepeat(letter) {
@@ -35,7 +43,7 @@ function checkRepeat(letter) {
 	}
 };
 
-var theWord = StarWars[Math.floor(Math.random() * 36)];
+var theWord = StarWars[Math.floor(Math.random() * 50)];
 
 function printWord() {
 	for (var n = 0; n < theWord.length; n++) {
@@ -49,21 +57,21 @@ function printWord() {
 };
 
 function resetWord (){
-	theWord = StarWars[Math.floor(Math.random() * 36)];
+	theWord = StarWars[Math.floor(Math.random() * 50)];
 	pastGuess = [];
 	spaceHolder = "";
 	printWord();
 	lives = 10;
-	document.getElementById("lives").innerHTML= lives + " Lives Left";
-	document.getElementById("directions").innerHTML= "You Won!";
-	document.getElementById("lastGuess").innerHTML= "You're Last Guess was: <br>";
+	document.getElementById("lives").innerHTML= lives + " Lives";
+	document.getElementById("directions").innerHTML= "You won!";
+	document.getElementById("lastGuess").innerHTML= "Your last guess was: <br>";
 	document.getElementById("pastGuess").innerHTML= "You've already used these! <br>" + pastGuess;
 };
 
 function checkGuess(letter) {
 	var correct = 0;
 	for (var n = 0; n < theWord.length; n++) {
-		if (letter == theWord[n].toLowerCase()){
+		if (letter == theWord[n].toUpperCase()){
 			spaceHolder = spaceHolder.substr(0, n) + theWord[n] + spaceHolder.substr(n+1);
 			correct++;
 		}
@@ -94,11 +102,11 @@ function checkWin(){
 function updateLives(){
 	lives--;
 	if (lives < 1) {
-		document.getElementById("directions").innerHTML= "Oops! Looks like you lost! Hit a key for your next guess!";
+		document.getElementById("directions").innerHTML= "Oops! Looks like you lost! Hit a key for your next round!";
 		resetWord();
 	} else {
-		document.getElementById("directions").innerHTML= "Nope! Try Again!";
-		document.getElementById("lives").innerHTML= lives + " Lives Left";
+		document.getElementById("directions").innerHTML= "Nope! Try again!";
+		document.getElementById("lives").innerHTML= lives + " Lives";
 	};
 }
 
@@ -106,10 +114,10 @@ window.onload = printWord;
 console.log(theWord);
 
 document.onkeyup = function(event) {
-	var guess = String.fromCharCode(event.keyCode).toLowerCase();
+	var guess = String.fromCharCode(event.keyCode).toUpperCase();
 	
 	// is it an alpha key?
-	if (!/[a-z]/.test(guess)) {
+	if (!/[A-Z]/.test(guess)) {
 		document.getElementById("directions").innerHTML= "Select an alpha key.";
 	} 
 
@@ -130,8 +138,8 @@ document.onkeyup = function(event) {
 
 	// wrong guess
 	else {
-		document.getElementById("directions").innerHTML= "Nope! Try Again!";
-		document.getElementById("lastGuess").innerHTML= "You're Last Guess was: <br>" + guess;
+		document.getElementById("directions").innerHTML= "Nope! Try again!";
+		document.getElementById("lastGuess").innerHTML= "Your last guess was: <br>" + guess.toUpperCase() ;
 		pastGuess.push(guess);
 		document.getElementById("pastGuess").innerHTML= "You've already used these! <br>" + pastGuess;
 		updateLives();

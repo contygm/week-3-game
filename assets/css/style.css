@@ -5,7 +5,7 @@
 }
 
 body {
-	background-image: url(../images/galaxy2.jpg);
+	background-image: url(../images/space.png);
 	background-size: cover;
 	color: white;
 }
@@ -38,12 +38,12 @@ h1, h2 {
 
 h1{
 	font-size: 60px;
-	font-family: "SF Distant Galaxy AltOutline";
+	font-family: "SF Distant Galaxy AltOutline", Impact, Charcoal, sans-serif;
 }
 
 h2 {
 	font-size: 25px;
-	font-family: "SF Distant Galaxy AltOutline";
+	font-family: "SF Distant Galaxy AltOutline", Impact, Charcoal, sans-serif;
 	font-style: italic;
 }
 
@@ -53,6 +53,8 @@ p   {
   transform: translateY(-50%);
   font-size: 20px;
   font-weight: bold;
+  font-family: "Lucida Console", Monaco, monospace;
+  line-height: 2;
  }
 
 #gallows {
@@ -69,23 +71,26 @@ p   {
 	align-content: center;
 	height: 70%;
 	position: absolute;
-	border: 3px solid #FF8080;
-	box-shadow: 0 0 2em #F4171D;
+	border: 3px solid #F74E40;
+	box-shadow: 0 0 3em #F61920;
+	border-radius: 25px;
 }
 
 img {
 	width: 100%;
 	height: 100%;
+	border-radius: 25px;
 }
 
 #winsDiv, #livesDiv {
 	display: inline-block;
-	border: 3px solid #FE8484;
-	box-shadow: 0 0 2em #F4171D;
+	box-shadow: 0 0 3em #F61920;
 	width: 45%;
 	height: 20%;
 	text-align: center;
 	position: absolute;
+	border: 3px solid #F74E40;
+	border-radius: 25px;
 
 
 }
@@ -100,6 +105,8 @@ img {
 	float: right;
 	right: 0;
 	bottom: 0;
+	
+	
 }
 
 #guessBox {
@@ -116,6 +123,8 @@ img {
 	text-align: center;
 	height: 110px;
 	position: absolute;
+	border-radius: 25px;
+	padding: 0 10px 0 10px;
 }
 
 #directionsDiv {
